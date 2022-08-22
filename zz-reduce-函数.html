@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*   let demo = arr.reduce(function(pre, item, index,arr) {},init)
+            pre（上一次调用回调函数返回的值，或者是自定义的初始值（initVal））
+            cur（数组中当前被处理的元素）
+             6种使用场景:
+            数组的累加求和
+            数组的累乘求积
+            数组去重
+            计算数组中每个元素出现的次数
+            将多维数组（大于等于2）转为一维数组
+            对象里的属性求和 */
+
+      /*  封装一个函数, 利用reduce处理http://www.baidu.com/?name=zhangsan&age=18&sex=nan# , 要求返回一个对象
+            输出的结果 : { name:"zhangsan",age:18,sex:nan } */
+
+      function process(url) {
+        let reg = /([^?=&]+)(=([^&=#]*))/g;
+        let str = url.match(reg);
+        // console.log(str); //['name=zhangsan', 'age=18', 'sex=nan']
+        return str.reduce(
+          (acc, item) =>(
+            (acc[item.slice(0, item.indexOf("="))] = item.slice(item.indexOf("=") + 1)),acc),{});
+      }
+      console.log(process("http://www.baidu.com/?name=zhangsan&age=18&sex=nan#"));
+    </script>
+  </body>
+</html>
