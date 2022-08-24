@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.min.js"></script>
+</head>
+<body>
+   <div id="app">
+    <ul>
+        <li v-for="item in arr" :key="item">{{item}}</li>
+    </ul>
+    <button @click="btn">走一走</button>
+   </div>
+   <script>
+    Vue.config.productionTip = false;
+    
+    new Vue({
+      el:'#app',
+      data(){
+        return {
+            arr: ['帅哥','美女','程序猿'],
+        }
+      },
+      methods:{
+        btn(){
+            this.arr.push(this.arr[0])  //头部新增
+            this.arr.shift()  //头部删除
+        }
+      }
+     });
+   </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //用promise实现一个暂停函数(笔试原题)
+      // 延迟三秒打印你好
+      function sleep(time) {
+        return new Promise((resolve) => {  //resolve成功回调函数
+          setTimeout(resolve, time);
+        });
+      }
+
+      async function main() {
+        await sleep(3000);
+        console.log("你好");
+      }
+
+      main();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      /*画3个圆代表红绿灯*/
+
+      ul > li {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      /*红绿灯的三个颜色*/
+
+      #red {
+        background: red;
+      }
+
+      #yellow {
+        background: yellow;
+      }
+
+      #green {
+        background: green;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="traffic" class="">
+      <li id="green"></li>
+      <li id="yellow"></li>
+      <li id="red"></li>
+    </ul>
+    <!-- <script>
+      function red() {
+        console.log("red");
+      }
+      function green() {
+        console.log("green");
+      }
+      function yellow() {
+        console.log("yellow");
+      }
+
+      function light(time, name) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            name();
+            resolve();
+          }, time);
+        });
+      }
+
+      function step() {
+        Promise.resolve()
+          .then(() => {
+            return light(3000, red);
+          })
+          .then(() => {
+            return light(2000, green);
+          })
+          .then(() => {
+            return light(1000, yellow);
+          })
+          .then(() => {
+            // 黄色循环完毕再调用一次step，实现不断循环打印
+            return step();
+          });
+      }
+      step();
+    </script> -->
+  </body>
+</html>
